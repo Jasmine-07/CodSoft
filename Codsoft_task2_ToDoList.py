@@ -14,11 +14,11 @@ def deleteTask():
     
 ws = Tk()
 ws.geometry('500x450+500+200')
-ws.title('To-Do List')
-ws.config(bg='#223441')
-ws.resizable(width=False, height=False)
+ws.title('To-Do List') #the title will add a title to the window
+ws.config(bg='#223441') #config is used to provide background color to the window.
+ws.resizable(width=False, height=False) #resizable accepts boolean values
 
-frame = Frame(ws)
+frame = Frame(ws) #used to hold other widgets
 frame.pack(pady=10)
 
 lb = Listbox(
@@ -40,7 +40,7 @@ task_list = []
 for item in task_list:
     lb.insert(END, item)
 
-sb = Scrollbar(frame)
+sb = Scrollbar(frame) #used so that users can scroll the information that is placed in a limited size on the window
 sb.pack(side=RIGHT, fill=BOTH)
 
 lb.config(yscrollcommand=sb.set)
@@ -79,4 +79,4 @@ delTask_btn = Button(
 delTask_btn.pack(fill=BOTH, expand=True, side=LEFT)
 
 
-ws.mainloop()
+ws.mainloop()# holds the screen so that we can see the window
